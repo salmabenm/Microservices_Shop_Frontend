@@ -38,6 +38,7 @@ export class HomePageComponent implements OnInit {
         this.productService.getProducts().subscribe(
           (products: Array<Product>) => {
             this.products = products;
+            console.log(this.products);
           },
           error => {
             console.error('Error fetching products', error);
@@ -52,6 +53,7 @@ export class HomePageComponent implements OnInit {
   }
 
   orderProduct(product: Product, quantity: string) {
+
     this.oidcSecurityService.userData$.subscribe(result => {
       const userDetails = {
         email: result.userData.email,
@@ -59,30 +61,24 @@ export class HomePageComponent implements OnInit {
         lastName: result.userData.lastName
       };
 
-      if (!quantity) {
+      if(!quantity) {
         this.orderFailed = true;
         this.orderSuccess = false;
         this.quantityIsNull = true;
       } else {
         const order: Order = {
-          skuCode: product.skuCode,
+          skuCode: product.name,
           price: product.price,
           quantity: Number(quantity),
           userDetails: userDetails
-        };
+        }
 
-        this.orderService.orderProduct(order).subscribe(
-          () => {
-            this.orderSuccess = true;
-            this.orderFailed = false;
-          },
-          error => {
-            this.orderFailed = true;
-            this.orderSuccess = false;
-            console.error('Error placing order', error);
-          }
-        );
+        this.orderService.orderProduct(order).subscribe(() => {
+          this.orderSuccess = true;
+        }, error => {
+          this.orderFailed = false;
+        })
       }
-    });
+    })
   }
 }
