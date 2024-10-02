@@ -57,9 +57,10 @@ export class HomePageComponent implements OnInit {
     this.oidcSecurityService.userData$.subscribe(result => {
       const userDetails = {
         email: result.userData.email,
-        firstName: result.userData.firstName,
-        lastName: result.userData.lastName
+        firstName: result.userData.given_name,
+        lastName: result.userData.family_name
       };
+      console.log(result.userData)
 
       if(!quantity) {
         this.orderFailed = true;
