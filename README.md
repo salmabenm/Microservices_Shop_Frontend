@@ -8,12 +8,28 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Screenshots
 
+Spring Security with Keycloak
+
+![auth.png](screenshots/auth.png)
+
 Home Page
 
-![img.png](screenshots/img.png)
+![home.png](screenshots/home.png)
 
 Add Product page
 
-![img_1.png](screenshots/img_1.png)
+![create_product.png](screenshots/create_product.png)
+
+Storing notifications in Kafka after placing an order
+
+![kafka.png](screenshots/kafka.png)
+
+Receive an email in Mailtrap from the notification service using Java MailSender.
+
+![mailTrap.png](screenshots/mailTrap.png)
+
+Dashboard with Grafana Stack : Grafana-Loki-Tempo
+
+![grafana.png](screenshots/grafana.png)
 
 
