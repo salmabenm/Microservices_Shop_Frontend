@@ -32,4 +32,14 @@ Dashboard with Grafana Stack : Grafana-Loki-Tempo
 
 ![grafana.png](screenshots/grafana.png)
 
+##MicroservicesShopBackend
+
+If you would like to consult the back-end repositories, you can find them here:
+
+https://github.com/salmabenm/API_Gateway.git
+https://github.com/salmabenm/Product_Service.git
+https://github.com/salmabenm/Order_Service.git
+https://github.com/salmabenm/Inventory_Service.git
+https://github.com/salmabenm/Notification_Service.git
+
 
